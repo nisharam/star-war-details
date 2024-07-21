@@ -15,6 +15,7 @@ export const Stars = () => {
       });
   }, []);
 
+  //get the home planet with the respective ids.
   useEffect(() => {
     const getHomePlanetName = async () => {
       const names = {};
@@ -32,6 +33,7 @@ export const Stars = () => {
     }
   }, [starWars]);
 
+  //adds the key home_planet in the array.
   useEffect(() => {
     if (Object.keys(planetNames).length > 0) {
       const updatedStarWars = starWars.map((star) => ({
@@ -48,6 +50,11 @@ export const Stars = () => {
     return data.name;
   };
 
+  /**
+   *
+   * @description added this function to get the film names.
+   * now in the modal it shows the url, need to update with the movie name.
+   */
   const getFilmName = async (filmId) => {
     const response = await fetch(filmId);
     const data = await response.json();
