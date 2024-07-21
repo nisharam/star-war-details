@@ -3,7 +3,7 @@ import styles from "./styles.css";
 import { DetailCard } from "./card";
 import { CardModal } from "./cardModal";
 
-export const StarsList = ({ starWars, getPlanetName, planetName }) => {
+export const StarsList = ({ starWars, planetNames }) => {
   const [openModal, setOpenModal] = useState(false);
   const [starWarModalContent, setStarWarModalContent] = useState("");
 
@@ -20,13 +20,12 @@ export const StarsList = ({ starWars, getPlanetName, planetName }) => {
     <>
       <div className={"list_container"}>
         {starWars?.length > 0 &&
+          Object.keys(planetNames).length > 0 &&
           starWars.map((starWar, index) => (
             <DetailCard
               starWar={starWar}
               key={index}
               handleOpenModal={handleOpenModal}
-              getPlanetName={getPlanetName}
-              planetName={planetName}
             />
           ))}
       </div>

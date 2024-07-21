@@ -1,16 +1,7 @@
 import { Button, Card } from "antd";
-import { useEffect } from "react";
+import "./styles.css";
 
-export const DetailCard = ({
-  starWar,
-  handleOpenModal,
-  getPlanetName,
-  planetName,
-}) => {
-  useEffect(() => {
-    getPlanetName(starWar.homeworld);
-  }, []);
-
+export const DetailCard = ({ starWar, handleOpenModal }) => {
   return (
     <Card
       title={starWar.name}
@@ -20,8 +11,12 @@ export const DetailCard = ({
       }}
     >
       <div>gender: {starWar.gender}</div>
-      <div>home planet: {planetName}</div>
-      <Button type="primary" onClick={() => handleOpenModal(starWar)}>
+      <div>home planet: {starWar.home_planet}</div>
+      <Button
+        type="primary"
+        onClick={() => handleOpenModal(starWar)}
+        className="mar-top-20"
+      >
         Details
       </Button>
     </Card>
