@@ -1,0 +1,7 @@
+.list_container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20;
+  flex-wrap: wrap;
+  padding: 0 40px;
+}
